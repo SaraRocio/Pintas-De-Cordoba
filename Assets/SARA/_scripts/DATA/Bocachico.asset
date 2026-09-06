@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleData
   itemName: Bocachico
   type: 0
-  icon: {fileID: 0}
+  icon: {fileID: -2508178794288614200, guid: b601bf26d9ae4c74190b67762c5d9b36, type: 3}

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleData
   itemName: Mazorca
   type: 0
-  icon: {fileID: 0}
+  icon: {fileID: -4365882707533014553, guid: b23e85581cbbc6345921aa32a974ede9, type: 3}

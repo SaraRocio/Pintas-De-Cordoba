@@ -8,6 +8,12 @@ public class ObjectiveManager : MonoBehaviour
     [Header("Objetos necesarios para este nivel")]
     [SerializeField] private List<CollectibleData> objectives;
 
+    [Header("HUD")]
+    [SerializeField] private Transform objectiveContainer;
+    [SerializeField] private GameObject objectiveItemPrefab;
+
+    private List<ObjectiveUIItem> uiItems = new List<ObjectiveUIItem>();
+
     private void Awake()
     {
         if (instance == null)
@@ -22,9 +28,10 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Start()
     {
+        CreateObjectiveUI();
         CheckObjectives();
     }
-    
+
     public List<CollectibleData> GetObjectives()
     {
         return objectives;
@@ -37,16 +44,38 @@ public class ObjectiveManager : MonoBehaviour
 
     public void CheckObjectives()
     {
-        foreach (CollectibleData objective in objectives)
+        for (int i = 0; i < objectives.Count; i++)
         {
-            if (IsCollected(objective))
+            bool collected = IsCollected(objectives[i]);
+
+            if (collected)
             {
-                Debug.Log(" Recogido: " + objective.ItemName);
+                Debug.Log("Recogido: " + objectives[i].ItemName);
             }
             else
             {
-                Debug.Log(" Falta: " + objective.ItemName);
+                Debug.Log("Falta: " + objectives[i].ItemName);
             }
+
+            if (i < uiItems.Count)
+            {
+                uiItems[i].Setup(objectives[i], collected);
+            }
+        }
+    }
+
+    private void CreateObjectiveUI()
+    {
+        foreach (CollectibleData objective in objectives)
+        {
+            GameObject newItem = Instantiate(
+                objectiveItemPrefab,
+                objectiveContainer
+            );
+
+            ObjectiveUIItem uiItem = newItem.GetComponent<ObjectiveUIItem>();
+
+            uiItems.Add(uiItem);
         }
     }
 }
