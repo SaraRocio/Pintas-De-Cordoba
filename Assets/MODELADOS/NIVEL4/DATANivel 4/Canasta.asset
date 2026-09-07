@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1129a8e8368c747bcb07dd086cd518, type: 3}
+  m_Name: Canasta
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleData
+  itemName: Canasta
+  type: 3
+  isFinalObjective: 0
+  icon: {fileID: 3626405633049425772, guid: 2c0df1feaae577d48adad079576a1248, type: 3}
