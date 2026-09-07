@@ -30,14 +30,7 @@ public class Collectible : MonoBehaviour
         {
             Debug.Log("OBJETO FINAL RECOGIDO");
 
-            if (ObjectiveManager.instance.AllObjectivesCollected())
-            {
-                Debug.Log("TODOS LOS OBJETIVOS ESTÁN COMPLETOS");
-            }
-            else
-            {
-                Debug.Log("FALTA UN OBJETIVO");
-            }
+            LevelCompletionManager.instance.CheckLevelCompletion();
         }
 
 
