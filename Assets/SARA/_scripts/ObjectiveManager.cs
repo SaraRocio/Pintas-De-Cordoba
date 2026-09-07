@@ -42,6 +42,19 @@ public class ObjectiveManager : MonoBehaviour
         return CollectibleManager.instance.HasCollectible(data);
     }
 
+    public bool AllObjectivesCollected()
+    {
+        foreach (CollectibleData objective in objectives)
+        {
+            if (!IsCollected(objective))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void CheckObjectives()
     {
         for (int i = 0; i < objectives.Count; i++)
@@ -77,5 +90,9 @@ public class ObjectiveManager : MonoBehaviour
 
             uiItems.Add(uiItem);
         }
+
     }
+
+
+
 }

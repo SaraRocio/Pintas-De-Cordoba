@@ -24,6 +24,23 @@ public class Collectible : MonoBehaviour
 
         CollectibleManager.instance.AddCollectible(data);
 
+
+        // Compruebar si este es el objeto final del livel
+        if (data.IsFinalObjective)
+        {
+            Debug.Log("OBJETO FINAL RECOGIDO");
+
+            if (ObjectiveManager.instance.AllObjectivesCollected())
+            {
+                Debug.Log("TODOS LOS OBJETIVOS ESTÁN COMPLETOS");
+            }
+            else
+            {
+                Debug.Log("FALTA UN OBJETIVO");
+            }
+        }
+
+
         if (pickupEffect != null)
         {
             Instantiate(
