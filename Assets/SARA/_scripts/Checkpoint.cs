@@ -1,0 +1,45 @@
+using UnityEngine;
+
+public class Checkpoint : MonoBehaviour
+{
+    public GameObject effect;
+    public Transform effectPoint;
+    public Animator anim;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (LevelManager.instance.respawnPoint != transform.position)
+            {
+                LevelManager.instance.respawnPoint = transform.position;
+
+                if (effect != null && effectPoint != null)
+                {
+                    Instantiate(
+                        effect,
+                        effectPoint.position,
+                        Quaternion.identity
+                    );
+                }
+
+                Checkpoint[] allCP = Object.FindObjectsByType<Checkpoint>();
+
+                foreach (Checkpoint cp in allCP)
+                {
+                    if (cp.anim != null)
+                    {
+                        cp.anim.SetBool("active", false);
+                    }
+                }
+
+                if (anim != null)
+                {
+                    anim.SetBool("active", true);
+                }
+
+                AudioManager.instance.PlaySFX(3);
+            }
+        }
+    }
+}

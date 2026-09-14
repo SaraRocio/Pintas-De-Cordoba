@@ -4,35 +4,45 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
     private Transform target;
     private Vector3 offset;
-    public float moveSpeed = 15f;
 
-    // Start is called before the first frame update
+    public float moveSpeed = 15f;
+    public float rotationSpeed = 5f;
+
+    private Transform cameraTarget;
+
     void Start()
     {
         target = Object.FindAnyObjectByType<PlayerController>().transform;
-        offset = transform.position ;
 
-        //Cursor.lockState = CursorLockMode.Locked;
+        offset = transform.position - target.position;
 
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, moveSpeed *  Time.deltaTime);
-   
-        if(transform.position.y < offset.y)
+        // Seguir al jugador
+        transform.position = Vector3.Lerp(
+            transform.position,
+            target.position + offset,
+            moveSpeed * Time.deltaTime
+        );
+
+        // Girar la cámara si hay un nuevo punto
+        if (cameraTarget != null)
         {
-            transform.position = new Vector3(transform.position.x, offset.y, transform.position.z);
-        
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                cameraTarget.rotation,
+                rotationSpeed * Time.deltaTime
+            );
         }
     }
-    public void SnapToTarget()
+
+    public void ChangeCameraDirection(Transform newCameraTarget)
     {
-        transform.position = target.position + offset;
+        cameraTarget = newCameraTarget;
     }
 }
