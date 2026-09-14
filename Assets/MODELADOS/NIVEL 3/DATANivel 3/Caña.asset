@@ -16,3 +16,4 @@ MonoBehaviour:
   type: 2
   isFinalObjective: 0
   icon: {fileID: -7754841992205056308, guid: e2b3587f315d8214cb21e90f6382b7e1, type: 3}
+  requiredAmount: 5

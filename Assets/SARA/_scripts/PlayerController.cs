@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(Input.GetAxisRaw("Vertical"));
+
 
         yStore = moveAmount.y;
 
@@ -83,11 +83,16 @@ public class PlayerController : MonoBehaviour
 
         charCon.Move(new Vector3 (moveAmount.x * moveSpeed, moveAmount.y, moveAmount.z * moveSpeed) * Time.deltaTime);
 
-        float moveVel = new Vector3(moveAmount.x, 0f, moveAmount.z).magnitude * moveSpeed; 
-      
+        float moveVel = new Vector3(moveAmount.x, 0f, moveAmount.z).magnitude * moveSpeed;
+
         //anim.SetFloat("speed", moveVel);
         //anim.SetBool("isGrounded", charCon.isGrounded);
         //anim.SetFloat("yVel", moveAmount.y);
 
+}
+
+    public void ResetMovement()
+    {
+        moveAmount = Vector3.zero;
     }
 }
