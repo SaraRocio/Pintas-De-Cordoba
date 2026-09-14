@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
 
         //Cursor.lockState = CursorLockMode.Locked;
     }
-
+    a
     void Update()
     {
         // Seguir al jugador
