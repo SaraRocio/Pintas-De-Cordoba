@@ -1749,7 +1749,7 @@ MonoBehaviour:
   objectives:
   - {fileID: 11400000, guid: 56a83366820ac1a4485d253b6de50556, type: 2}
   - {fileID: 11400000, guid: 5ee5b3e3d4c00d944ba869325285115a, type: 2}
-  objectiveContainer: {fileID: 1551843981}
+  objectiveContainer: {fileID: 0}
   objectiveItemPrefab: {fileID: 7411637910804139758, guid: 4c17d0877ccb7d548b03e020e7e47cd3, type: 3}
 --- !u!114 &497244032
 MonoBehaviour:
@@ -1763,9 +1763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1ba1eb8d751a94cb34b4533a858c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelCompletionManager
-  resultPanel: {fileID: 2114065565}
-  successPanel: {fileID: 507325327}
-  failurePanel: {fileID: 988043556}
+  resultPanel: {fileID: 0}
+  successPanel: {fileID: 0}
+  failurePanel: {fileID: 0}
   nextLevel: Nivel 3
 --- !u!1 &507325327
 GameObject:
@@ -3145,72 +3145,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1412985563}
   m_SourcePrefab: {fileID: 100100000, guid: 65ee7ade94340c8479714d0e9fdcb436, type: 3}
---- !u!1 &876685365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 876685368}
-  - component: {fileID: 876685367}
-  - component: {fileID: 876685366}
-  m_Layer: 0
-  m_Name: DeathZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &876685366
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876685365}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 135.03195, y: 1.0828781, z: 35.44094}
-  m_Center: {x: 8.962219, y: 0.041439056, z: 17.22047}
---- !u!114 &876685367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876685365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922a3b28facbc5540bfbe4fb7c0462cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathZone
---- !u!4 &876685368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876685365}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59, y: -5, z: -14.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &906823123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7910,7 +7844,6 @@ SceneRoots:
   - {fileID: 909881826}
   - {fileID: 691533069}
   - {fileID: 281395141}
-  - {fileID: 876685368}
   - {fileID: 509296632}
   - {fileID: 913700595}
   - {fileID: 665178079}
