@@ -1301,6 +1301,7 @@ MonoBehaviour:
   gravityScale: 2
   charCon: {fileID: 141145810}
   rotateSpeed: 10
+  anim: {fileID: 0}
   jumpParticle: {fileID: 0}
   landingParticle: {fileID: 0}
 --- !u!1001 &148979171
