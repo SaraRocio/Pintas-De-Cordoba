@@ -15,6 +15,10 @@ public class CollectibleData : ScriptableObject
     [Header("UI")]
     [SerializeField] private Sprite icon;
 
+    [Header("Cantidad necesaria")]
+    [SerializeField] private int requiredAmount = 1;
+
+    public int RequiredAmount => requiredAmount;
     public string ItemName => itemName;
     public CollectibleType Type => type;
     public bool IsFinalObjective => isFinalObjective;

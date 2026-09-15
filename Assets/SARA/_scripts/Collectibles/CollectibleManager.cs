@@ -5,7 +5,7 @@ public class CollectibleManager : MonoBehaviour
 {
     public static CollectibleManager instance;
 
-    private List<CollectibleData> collectedItems = new List<CollectibleData>();
+    private Dictionary<CollectibleData, int> collectedItems = new Dictionary<CollectibleData, int>();
 
     private void Awake()
     {
@@ -21,26 +21,36 @@ public class CollectibleManager : MonoBehaviour
 
     public void AddCollectible(CollectibleData data)
     {
-        if (!collectedItems.Contains(data))
+        if (!collectedItems.ContainsKey(data))
         {
-            collectedItems.Add(data);
-
-            Debug.Log("Objeto agregado: " + data.ItemName);
-
-            if (ObjectiveManager.instance != null)
-            {
-                ObjectiveManager.instance.CheckObjectives();
-            }
+            collectedItems.Add(data, 0);
         }
+
+        collectedItems[data]++;
+
+        Debug.Log(
+            "Objeto recogido: " + data.ItemName +
+            " (" + collectedItems[data] + "/" + data.RequiredAmount + ")"
+        );
+
+        if (ObjectiveManager.instance != null)
+        {
+            ObjectiveManager.instance.CheckObjectives();
+        }
+    }
+
+    public int GetCollectedAmount(CollectibleData data)
+    {
+        if (collectedItems.ContainsKey(data))
+        {
+            return collectedItems[data];
+        }
+
+        return 0;
     }
 
     public bool HasCollectible(CollectibleData data)
     {
-        return collectedItems.Contains(data);
-    }
-
-    public List<CollectibleData> GetCollectedItems()
-    {
-        return collectedItems;
+        return GetCollectedAmount(data) >= data.RequiredAmount;
     }
 }

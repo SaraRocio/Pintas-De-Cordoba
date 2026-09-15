@@ -18,9 +18,9 @@ public class CameraController : MonoBehaviour
 
         offset = transform.position - target.position;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
-
+    a
     void Update()
     {
         // Seguir al jugador
