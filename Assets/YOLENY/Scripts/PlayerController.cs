@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem; // Permite utilizar el nuevo sistema de entrada.
 
 // Esta clase controla el movimiento de Deiva.
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     // Referencia al componente CharacterController de Deiva.
     private CharacterController controller;
