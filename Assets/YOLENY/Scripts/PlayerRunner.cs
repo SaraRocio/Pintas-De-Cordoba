@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem; // Permite utilizar el nuevo sistema de entrada.
 
 // Esta clase controla el movimiento de Deiva.
-public class PlayerController2 : MonoBehaviour
+public class PlayerRunner : MonoBehaviour
 {
     // Referencia al componente CharacterController de Deiva.
     private CharacterController controller;
@@ -10,7 +10,7 @@ public class PlayerController2 : MonoBehaviour
     // Referencia al componente Animator de Deiva.
     private Animator anim;
 
-    // Velocidad automática de avance de Deiva.
+    // Velocidad automatica de avance de Deiva.
     public float forwardSpeed = 5f;
 
     // Velocidad de movimiento hacia los lados.
@@ -55,27 +55,27 @@ public class PlayerController2 : MonoBehaviour
         // Variable que almacena el movimiento horizontal.
         float horizontal = 0f;
 
-        // Si se presiona izquierda, el valor será -1.
+        // Si se presiona izquierda, el valor serï¿½ -1.
         if (moveLeft)
         {
             horizontal = -1f;
         }
 
-        // Si se presiona derecha, el valor será 1.
+        // Si se presiona derecha, el valor serï¿½ 1.
         if (moveRight)
         {
             horizontal = 1f;
         }
 
-        // Crea el movimiento automático hacia adelante
+        // Crea el movimiento automï¿½tico hacia adelante
         // y el movimiento lateral controlado por el jugador.
         Vector3 move = transform.forward * forwardSpeed
                      + transform.right * horizontal * lateralSpeed;
 
-        // Comprueba si Deiva está tocando el suelo.
+        // Comprueba si Deiva estï¿½ tocando el suelo.
         if (controller.isGrounded)
         {
-            // Mantiene una pequeña velocidad hacia abajo
+            // Mantiene una pequeï¿½a velocidad hacia abajo
             // para que el CharacterController permanezca en el suelo.
             if (velocity.y < 0)
             {
@@ -88,7 +88,7 @@ public class PlayerController2 : MonoBehaviour
                 // Calcula la velocidad necesaria para alcanzar la altura del salto.
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-                // Activa la animación de salto.
+                // Activa la animaciï¿½n de salto.
                 anim.SetBool("IsJumping", true);
             }
         }
@@ -99,7 +99,7 @@ public class PlayerController2 : MonoBehaviour
         // Agrega el movimiento vertical al movimiento general.
         move += velocity;
 
-        // Mueve físicamente a Deiva utilizando el CharacterController.
+        // Mueve fï¿½sicamente a Deiva utilizando el CharacterController.
         controller.Move(move * Time.deltaTime);
     }
 }
