@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Bovino
   type: 0
   isFinalObjective: 1
-  icon: {fileID: 0}
+  icon: {fileID: -4800152044742618288, guid: fdc4d5295d6ab2143893744ee1cd635e, type: 3}
+  requiredAmount: 1
