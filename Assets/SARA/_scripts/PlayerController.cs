@@ -17,27 +17,27 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 10f;
 
     // Animator del personaje
-    public Animator anim;
+    private Animator anim;
 
     public GameObject jumpParticle, landingParticle;
 
     private bool lastGrounded;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Buscar automáticamente los componentes si no están asignados
+        // Buscar automáticamente los componentes
         if (charCon == null)
         {
             charCon = GetComponent<CharacterController>();
         }
 
-        if (anim == null)
-        {
-            anim = GetComponent<Animator>();
-        }
+        // Buscar automáticamente el Animator
+        anim = GetComponent<Animator>();
 
         cam = Object.FindAnyObjectByType<CameraController>();
+
         lastGrounded = true;
 
         if (charCon != null)
@@ -56,23 +56,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (charCon == null)
+        if (charCon == null || isDead)
             return;
 
         if (!charCon.isGrounded)
         {
-            moveAmount.y = moveAmount.y +
-                (Physics.gravity.y * gravityScale * Time.fixedDeltaTime);
+            moveAmount.y +=
+                Physics.gravity.y * gravityScale * Time.fixedDeltaTime;
         }
         else
         {
-            moveAmount.y = Physics.gravity.y * gravityScale * Time.deltaTime;
+            moveAmount.y =
+                Physics.gravity.y * gravityScale * Time.deltaTime;
         }
     }
 
     void Update()
     {
-        if (charCon == null || cam == null)
+        if (charCon == null || cam == null || isDead)
             return;
 
         yStore = moveAmount.y;
@@ -84,22 +85,21 @@ public class PlayerController : MonoBehaviour
         moveAmount.y = 0f;
         moveAmount = moveAmount.normalized;
 
+        // ROTACIÓN
         if (moveAmount.magnitude > 0.1f)
         {
-            if (moveAmount != Vector3.zero)
-            {
-                Quaternion newRot = Quaternion.LookRotation(moveAmount);
+            Quaternion newRot = Quaternion.LookRotation(moveAmount);
 
-                transform.rotation = Quaternion.Slerp(
-                    transform.rotation,
-                    newRot,
-                    rotateSpeed * Time.deltaTime
-                );
-            }
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                newRot,
+                rotateSpeed * Time.deltaTime
+            );
         }
 
         moveAmount.y = yStore;
 
+        // SALTO
         if (charCon.isGrounded)
         {
             if (!lastGrounded)
@@ -111,12 +111,26 @@ public class PlayerController : MonoBehaviour
             {
                 moveAmount.y = jumpForce;
 
+                // Activar animación de salto
+                if (anim != null)
+                {
+                    anim.SetBool("IsJumping", true);
+                }
+
                 // jumpParticle.SetActive(true);
+            }
+            else
+            {
+                if (anim != null)
+                {
+                    anim.SetBool("IsJumping", false);
+                }
             }
         }
 
         lastGrounded = charCon.isGrounded;
 
+        // MOVIMIENTO
         charCon.Move(
             new Vector3(
                 moveAmount.x * moveSpeed,
@@ -125,31 +139,50 @@ public class PlayerController : MonoBehaviour
             ) * Time.deltaTime
         );
 
+        // VELOCIDAD DE MOVIMIENTO
         float moveVel = new Vector3(
             moveAmount.x,
             0f,
             moveAmount.z
         ).magnitude * moveSpeed;
 
-        // Cambiar entre Idle y Run
+        // ANIMACIONES
         if (anim != null)
         {
-            anim.SetBool("isRunning", moveVel > 0.1f);
+            // Correr cuando se está moviendo
+            anim.SetBool("IsRunning", moveVel > 0.1f);
+        }
+    }
+
+    // LLAMAR ESTE MÉTODO CUANDO DEIVA MUERA
+    public void Morir()
+    {
+        if (isDead)
+            return;
+
+        isDead = true;
+
+        // Detener movimiento
+        moveAmount = Vector3.zero;
+
+        // Animaciones
+        if (anim != null)
+        {
+            anim.SetBool("IsRunning", false);
+            anim.SetBool("IsJumping", false);
+            anim.SetBool("IsDead", true);
         }
 
-        // Otros parámetros opcionales del Animator
-        // anim.SetBool("isGrounded", charCon.isGrounded);
-        // anim.SetFloat("yVel", moveAmount.y);
+        Debug.Log("Deiva ha muerto.");
     }
 
     public void ResetMovement()
     {
         moveAmount = Vector3.zero;
 
-        // Detener la animación de correr
         if (anim != null)
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("IsRunning", false);
         }
     }
 }
