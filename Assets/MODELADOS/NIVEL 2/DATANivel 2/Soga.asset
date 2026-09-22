@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Soga
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleData
   itemName: Soga
-  type: 0
+  type: 1
   isFinalObjective: 0
   icon: {fileID: -1240851038952563830, guid: f82f06db0cddf464884d45abb8571dda, type: 3}
+  requiredAmount: 7

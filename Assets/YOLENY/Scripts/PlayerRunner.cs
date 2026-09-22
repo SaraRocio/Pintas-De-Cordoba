@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem; // Permite utilizar el nuevo sistema de entrada.
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 // Esta clase controla el movimiento de Deiva.
 public class PlayerRunner : MonoBehaviour
 {
-    // Referencia al componente CharacterController de Deiva.
+    // Referencia al CharacterController de Deiva.
     private CharacterController controller;
 
-    // Referencia al componente Animator de Deiva.
+    // Referencia al Animator de Deiva.
     private Animator anim;
 
-    // Velocidad automatica de avance de Deiva.
+    // Velocidad automática de avance.
     public float forwardSpeed = 5f;
 
     // Velocidad de movimiento hacia los lados.
@@ -22,84 +24,130 @@ public class PlayerRunner : MonoBehaviour
     // Fuerza de gravedad.
     public float gravity = -20f;
 
-    // Velocidad vertical actual de Deiva.
+    // Tiempo que dura la animación de muerte antes de reiniciar.
+    public float deathDelay = 2f;
+
+    // Velocidad vertical actual.
     private Vector3 velocity;
 
-    // Se ejecuta una vez al iniciar el objeto.
+    // Evita que la muerte se active varias veces.
+    private bool isDead = false;
+
     void Start()
     {
-        // Obtiene el componente CharacterController del jugador.
         controller = GetComponent<CharacterController>();
-
-        // Obtiene el componente Animator del jugador.
         anim = GetComponent<Animator>();
     }
 
-    // Se ejecuta una vez por cada fotograma.
     void Update()
     {
-        // Comprueba si existe un teclado conectado.
+        // Si Deiva murió, no permitimos ningún movimiento.
+        if (isDead)
+        {
+            return;
+        }
+
+        // Comprueba si existe un teclado.
         if (Keyboard.current == null)
         {
             return;
         }
 
-        // Comprueba si se presiona A o la flecha izquierda.
+        // Movimiento izquierda.
         bool moveLeft = Keyboard.current.aKey.isPressed ||
                         Keyboard.current.leftArrowKey.isPressed;
 
-        // Comprueba si se presiona D o la flecha derecha.
+        // Movimiento derecha.
         bool moveRight = Keyboard.current.dKey.isPressed ||
                          Keyboard.current.rightArrowKey.isPressed;
 
-        // Variable que almacena el movimiento horizontal.
         float horizontal = 0f;
 
-        // Si se presiona izquierda, el valor ser� -1.
         if (moveLeft)
         {
             horizontal = -1f;
         }
 
-        // Si se presiona derecha, el valor ser� 1.
         if (moveRight)
         {
             horizontal = 1f;
         }
 
-        // Crea el movimiento autom�tico hacia adelante
-        // y el movimiento lateral controlado por el jugador.
+        // Movimiento automático hacia adelante
+        // y movimiento lateral.
         Vector3 move = transform.forward * forwardSpeed
                      + transform.right * horizontal * lateralSpeed;
 
-        // Comprueba si Deiva est� tocando el suelo.
+        // Comprobar si está en el suelo.
         if (controller.isGrounded)
         {
-            // Mantiene una peque�a velocidad hacia abajo
-            // para que el CharacterController permanezca en el suelo.
             if (velocity.y < 0)
             {
                 velocity.y = -2f;
             }
 
-            // Comprueba si se acaba de presionar la barra espaciadora.
+            // Salto.
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                // Calcula la velocidad necesaria para alcanzar la altura del salto.
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-                // Activa la animaci�n de salto.
                 anim.SetBool("IsJumping", true);
+            }
+            else
+            {
+                anim.SetBool("IsJumping", false);
             }
         }
 
-        // Aplica la gravedad a la velocidad vertical.
+        // Gravedad.
         velocity.y += gravity * Time.deltaTime;
 
-        // Agrega el movimiento vertical al movimiento general.
+        // Movimiento vertical.
         move += velocity;
 
-        // Mueve f�sicamente a Deiva utilizando el CharacterController.
+        // Mover a Deiva.
         controller.Move(move * Time.deltaTime);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Si toca una pared, muere.
+        if (hit.gameObject.CompareTag("Wall"))
+        {
+            Morir();
+        }
+    }
+
+    void Morir()
+    {
+        // Evita activar la muerte varias veces.
+        if (isDead)
+        {
+            return;
+        }
+
+        isDead = true;
+
+        // Detiene el movimiento.
+        velocity = Vector3.zero;
+
+        // Activa la animación de muerte.
+        anim.SetBool("IsDead", true);
+
+        // Espera y reinicia.
+        StartCoroutine(ReiniciarDespuesDeMorir());
+    }
+
+    IEnumerator ReiniciarDespuesDeMorir()
+    {
+        yield return new WaitForSeconds(deathDelay);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // Animation Event del salto.
+    void StopJump()
+    {
+        anim.SetBool("IsJumping", false);
     }
 }
