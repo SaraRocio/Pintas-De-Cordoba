@@ -1458,7 +1458,7 @@ Animator:
   m_GameObject: {fileID: 141145809}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4818ea9ab193b854baaf8f08e1fde767, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9acad5e1fb378354fa480d78c62dd790, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa93aec39901919458ebade48f9c9c73, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1487,6 +1487,7 @@ MonoBehaviour:
   gravityScale: 2
   charCon: {fileID: 141145810}
   rotateSpeed: 10
+  anim: {fileID: 0}
   jumpParticle: {fileID: 0}
   landingParticle: {fileID: 0}
 --- !u!1001 &148979171
