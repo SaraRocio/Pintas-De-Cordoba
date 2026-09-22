@@ -2711,9 +2711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b498641c2091d5741a3b950ce699f191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRunner
-  forwardSpeed: 4
+  forwardSpeed: 2
   lateralSpeed: 6
-  jumpHeight: 2
+  jumpHeight: 7
   gravity: -20
   deathDelay: 2
 --- !u!1001 &839247937
