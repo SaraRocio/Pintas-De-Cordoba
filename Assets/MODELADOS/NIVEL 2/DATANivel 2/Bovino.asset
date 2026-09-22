@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bovino
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleData
   itemName: Bovino
-  type: 0
+  type: 1
   isFinalObjective: 1
   icon: {fileID: -4800152044742618288, guid: fdc4d5295d6ab2143893744ee1cd635e, type: 3}
   requiredAmount: 1
