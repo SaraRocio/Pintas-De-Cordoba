@@ -13,7 +13,7 @@ public class LevelCompletionManager : MonoBehaviour
     [SerializeField] private GameObject failurePanel;
 
     [Header("Siguiente nivel")]
-    [SerializeField] private string nextLevel;
+    [SerializeField] private int currentLevel;
 
     private void Awake()
     {
@@ -71,12 +71,17 @@ public class LevelCompletionManager : MonoBehaviour
 
     public void ContinueLevel()
     {
-        // Guardar el siguiente nivel
-        PlayerPrefs.SetString("CurrentLevel", nextLevel);
+        int nextUnlockedLevel = currentLevel + 1;
+
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+        if (nextUnlockedLevel > unlockedLevel)
+        {
+            PlayerPrefs.SetInt("UnlockedLevel", nextUnlockedLevel);
+        }
 
         PlayerPrefs.Save();
 
-        // Cargar siguiente nivel
-        SceneManager.LoadScene(nextLevel);
+        SceneManager.LoadScene("Selector de nivel");
     }
 }

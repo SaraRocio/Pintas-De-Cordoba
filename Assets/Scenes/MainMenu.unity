@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01a3f8aba0e3754fb1791048aedab40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  firstLevel: Nivel 1
+  levelSelectScene: Selector de nivel
   continueButton: {fileID: 1356259265}
 --- !u!4 &1566772056
 Transform:

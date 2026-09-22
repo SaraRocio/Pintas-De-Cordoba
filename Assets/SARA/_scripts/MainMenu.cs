@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [Header("Escenas")]
-    [SerializeField] private string firstLevel;
+    [SerializeField] private string levelSelectScene;
 
     [Header("Botones")]
     [SerializeField] private GameObject continueButton;
@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     private void CheckContinueButton()
     {
-        if (PlayerPrefs.HasKey("CurrentLevel"))
+        if (PlayerPrefs.HasKey("UnlockedLevel"))
         {
             continueButton.SetActive(true);
         }
@@ -28,26 +28,22 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        // Borrar progreso anterior
+        // Borra todo el progreso anterior
         PlayerPrefs.DeleteAll();
 
-        // Guardar el primer nivel
-        PlayerPrefs.SetString("CurrentLevel", firstLevel);
+        // El primer nivel queda desbloqueado
+        PlayerPrefs.SetInt("UnlockedLevel", 1);
 
         PlayerPrefs.Save();
 
-        // Iniciar juego
-        SceneManager.LoadScene(firstLevel);
+        // Va al selector de niveles
+        SceneManager.LoadScene(levelSelectScene);
     }
 
     public void ContinueGame()
     {
-        if (PlayerPrefs.HasKey("CurrentLevel"))
-        {
-            string savedLevel = PlayerPrefs.GetString("CurrentLevel");
-
-            SceneManager.LoadScene(savedLevel);
-        }
+        // Conserva todo el progreso
+        SceneManager.LoadScene(levelSelectScene);
     }
 
     public void QuitGame()

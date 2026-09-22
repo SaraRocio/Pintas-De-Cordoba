@@ -1886,7 +1886,7 @@ MonoBehaviour:
   resultPanel: {fileID: 2114065565}
   successPanel: {fileID: 507325327}
   failurePanel: {fileID: 988043556}
-  nextLevel: 
+  nextLevel: PruebaPintas
 --- !u!1 &507325327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,8 +3726,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2114065566}
   - {fileID: 1551843981}
+  - {fileID: 2114065566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
