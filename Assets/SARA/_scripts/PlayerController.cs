@@ -4,152 +4,206 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce, gravityScale;
-    private float yStore;
+    [Header("Movimiento")]
+    public float moveSpeed = 5f;
+    public float jumpForce = 8f;
+    public float gravityScale = 2f;
+    public float rotateSpeed = 10f;
 
+    [Header("Componentes")]
     public CharacterController charCon;
+    public Animator anim;
 
     private CameraController cam;
 
     private Vector3 moveAmount;
 
-    public float rotateSpeed = 10f;
-
-    // Animator del personaje
-    public Animator anim;
-
-    public GameObject jumpParticle, landingParticle;
-
     private bool lastGrounded;
+    private bool isDead = false;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        // Buscar automáticamente los componentes si no están asignados
+        // Buscar automáticamente el CharacterController
         if (charCon == null)
         {
             charCon = GetComponent<CharacterController>();
         }
 
+        // Buscar automáticamente el Animator
         if (anim == null)
         {
             anim = GetComponent<Animator>();
         }
 
+        // Buscar cámara
         cam = Object.FindAnyObjectByType<CameraController>();
+
         lastGrounded = true;
 
-        if (charCon != null)
-        {
-            charCon.Move(new Vector3(
-                0f,
-                Physics.gravity.y * gravityScale * Time.deltaTime,
-                0f
-            ));
-        }
-        else
-        {
-            Debug.LogError("No se encontró un CharacterController en Deiva.");
-        }
-    }
-
-    private void FixedUpdate()
-    {
         if (charCon == null)
-            return;
-
-        if (!charCon.isGrounded)
         {
-            moveAmount.y = moveAmount.y +
-                (Physics.gravity.y * gravityScale * Time.fixedDeltaTime);
+            Debug.LogError("No se encontró un CharacterController en el jugador.");
         }
-        else
+
+        if (anim == null)
         {
-            moveAmount.y = Physics.gravity.y * gravityScale * Time.deltaTime;
+            Debug.LogError("No se encontró un Animator en el jugador.");
         }
     }
+
 
     void Update()
     {
         if (charCon == null || cam == null)
             return;
 
-        yStore = moveAmount.y;
+        // Si está muerto, no permitir movimiento
+        if (isDead)
+            return;
 
-        moveAmount =
-            (cam.transform.forward * Input.GetAxisRaw("Vertical")) +
-            (cam.transform.right * Input.GetAxisRaw("Horizontal"));
 
-        moveAmount.y = 0f;
-        moveAmount = moveAmount.normalized;
+        // =====================================================
+        // MOVIMIENTO
+        // =====================================================
 
-        if (moveAmount.magnitude > 0.1f)
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction =
+            cam.transform.forward * vertical +
+            cam.transform.right * horizontal;
+
+        // Evitar que la cámara haga que el personaje se mueva hacia arriba/abajo
+        direction.y = 0f;
+
+        direction.Normalize();
+
+
+        // =====================================================
+        // ROTACIÓN
+        // =====================================================
+
+        if (direction.magnitude > 0.1f)
         {
-            if (moveAmount != Vector3.zero)
-            {
-                Quaternion newRot = Quaternion.LookRotation(moveAmount);
+            Quaternion newRot = Quaternion.LookRotation(direction);
 
-                transform.rotation = Quaternion.Slerp(
-                    transform.rotation,
-                    newRot,
-                    rotateSpeed * Time.deltaTime
-                );
-            }
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                newRot,
+                rotateSpeed * Time.deltaTime
+            );
         }
 
-        moveAmount.y = yStore;
+
+        // =====================================================
+        // GRAVEDAD
+        // =====================================================
 
         if (charCon.isGrounded)
         {
-            if (!lastGrounded)
+            // Mantener al personaje pegado al suelo
+            if (moveAmount.y < 0)
             {
-                // landingParticle.SetActive(true);
+                moveAmount.y = -2f;
             }
+        }
+        else
+        {
+            moveAmount.y +=
+                Physics.gravity.y *
+                gravityScale *
+                Time.deltaTime;
+        }
 
-            if (Input.GetButtonDown("Jump"))
+
+        // =====================================================
+        // SALTO
+        // =====================================================
+
+        if (charCon.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            moveAmount.y = jumpForce;
+
+            if (anim != null)
             {
-                moveAmount.y = jumpForce;
-
-                // jumpParticle.SetActive(true);
+                anim.SetBool("IsJumping", true);
             }
         }
 
-        lastGrounded = charCon.isGrounded;
 
-        charCon.Move(
-            new Vector3(
-                moveAmount.x * moveSpeed,
-                moveAmount.y,
-                moveAmount.z * moveSpeed
-            ) * Time.deltaTime
-        );
+        // =====================================================
+        // MOVIMIENTO FINAL
+        // =====================================================
 
-        float moveVel = new Vector3(
-            moveAmount.x,
-            0f,
-            moveAmount.z
-        ).magnitude * moveSpeed;
+        moveAmount.x = direction.x * moveSpeed;
+        moveAmount.z = direction.z * moveSpeed;
 
-        // Cambiar entre Idle y Run
+        charCon.Move(moveAmount * Time.deltaTime);
+
+
+        // =====================================================
+        // ANIMACIÓN DE CORRER
+        // =====================================================
+
+        bool isMoving = direction.magnitude > 0.1f;
+
         if (anim != null)
         {
-            anim.SetBool("isRunning", moveVel > 0.1f);
+            anim.SetBool("IsRunning", isMoving);
         }
 
-        // Otros parámetros opcionales del Animator
-        // anim.SetBool("isGrounded", charCon.isGrounded);
-        // anim.SetFloat("yVel", moveAmount.y);
+
+        // =====================================================
+        // ANIMACIÓN DE SALTO
+        // =====================================================
+
+        if (anim != null)
+        {
+            // Cuando vuelve al suelo, termina el salto
+            if (charCon.isGrounded && !lastGrounded)
+            {
+                anim.SetBool("IsJumping", false);
+            }
+        }
+
+
+        lastGrounded = charCon.isGrounded;
     }
+
+
+    // =========================================================
+    // MUERTE
+    // =========================================================
+
+    public void Die()
+    {
+        isDead = true;
+
+        if (anim != null)
+        {
+            anim.SetBool("IsDead", true);
+            anim.SetBool("IsRunning", false);
+            anim.SetBool("IsJumping", false);
+        }
+    }
+
+
+    // =========================================================
+    // REVIVIR / REINICIAR
+    // =========================================================
 
     public void ResetMovement()
     {
+        isDead = false;
+
         moveAmount = Vector3.zero;
 
-        // Detener la animación de correr
         if (anim != null)
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("IsRunning", false);
+            anim.SetBool("IsJumping", false);
+            anim.SetBool("IsDead", false);
         }
     }
 }
