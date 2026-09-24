@@ -69,8 +69,17 @@ public class LevelCompletionManager : MonoBehaviour
         );
     }
 
-    public void ContinueLevel()
+
+public void ContinueLevel()
     {
+        // Si es el Nivel 4, ir directamente a la escena final
+        if (currentLevel == 4)
+        {
+            SceneManager.LoadScene("Final");
+            return;
+        }
+
+        // Para los niveles anteriores
         int nextUnlockedLevel = currentLevel + 1;
 
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
@@ -82,6 +91,6 @@ public class LevelCompletionManager : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene("Selector de nivel");
+        SceneManager.LoadScene("PruebaPintas");
     }
 }
