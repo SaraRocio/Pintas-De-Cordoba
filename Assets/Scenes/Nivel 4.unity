@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0d2d18eb15cca474fb125b011908a38d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e93e747fe3c86d941a26ea15b290912e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   resultPanel: {fileID: 2114065565}
   successPanel: {fileID: 507325327}
   failurePanel: {fileID: 988043556}
-  nextLevel: PruebaPintas
+  currentLevel: 0
 --- !u!1 &507325327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,8 +3887,8 @@ Transform:
   m_GameObject: {fileID: 1205614898}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.21484, y: -0.01, z: 3.97471}
-  m_LocalScale: {x: 1.5, y: 8, z: 2}
+  m_LocalPosition: {x: -15.218, y: -0.01, z: 3.97471}
+  m_LocalScale: {x: 3.10065, y: 8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 663503746}
@@ -5495,8 +5495,8 @@ Transform:
   m_GameObject: {fileID: 1711413642}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.21484, y: -0.01, z: 3.97471}
-  m_LocalScale: {x: 1.5, y: 8, z: 2}
+  m_LocalPosition: {x: -15.218, y: -0.01, z: 3.97471}
+  m_LocalScale: {x: 3.10065, y: 8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 993850667}
@@ -6693,8 +6693,8 @@ Transform:
   m_GameObject: {fileID: 2038344714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.21484, y: -0.01, z: 3.97471}
-  m_LocalScale: {x: 1.5, y: 8, z: 2}
+  m_LocalPosition: {x: -15.218, y: -0.01, z: 3.97471}
+  m_LocalScale: {x: 3.10065, y: 8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1405649602}
