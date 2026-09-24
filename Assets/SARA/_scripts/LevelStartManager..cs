@@ -11,6 +11,10 @@ public class LevelStartManager : MonoBehaviour
     [SerializeField] private GameObject countdownPanel;
     [SerializeField] private TMP_Text countdownText;
 
+    [Header("Player - SOLO activar si este nivel lo necesita")]
+    [SerializeField] private GameObject player;
+    [SerializeField] private bool bloquearPlayer = false;
+
     [Header("Configuración")]
     [SerializeField] private float numberTime = 1f;
 
@@ -22,6 +26,12 @@ public class LevelStartManager : MonoBehaviour
 
         tutorialPanel.SetActive(true);
         countdownPanel.SetActive(false);
+
+        // Solo bloquea el Player en los niveles donde lo actives
+        if (bloquearPlayer && player != null)
+        {
+            player.SetActive(false);
+        }
     }
 
     public void ContinueFromTutorial()
@@ -54,6 +64,13 @@ public class LevelStartManager : MonoBehaviour
 
         countdownPanel.SetActive(false);
 
+        // Solo reactiva el Player si lo habíamos bloqueado
+        if (bloquearPlayer && player != null)
+        {
+            player.SetActive(true);
+        }
+
         Time.timeScale = 1f;
     }
 }
+

@@ -1102,7 +1102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &727468654
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2293,6 +2293,8 @@ MonoBehaviour:
   tutorialPanel: {fileID: 566829619}
   countdownPanel: {fileID: 1712518923}
   countdownText: {fileID: 2048414457}
+  player: {fileID: 0}
+  bloquearPlayer: 0
   numberTime: 2
 --- !u!1 &1446678249
 GameObject:
