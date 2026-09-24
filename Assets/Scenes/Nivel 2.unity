@@ -2478,6 +2478,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8417361359673230750, guid: 4818ea9ab193b854baaf8f08e1fde767, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 36f262cd1b11c78458c49f014e1f5e80, type: 2}
     - target: {fileID: -8679921383154817045, guid: 56fc432173aae7742ab05ec3e6d1d54e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5575027
@@ -2578,10 +2582,6 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.x
       value: 0.27845815
       objectReference: {fileID: 0}
-    - target: {fileID: 8417361359673230750, guid: 4818ea9ab193b854baaf8f08e1fde767, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 36f262cd1b11c78458c49f014e1f5e80, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4963,10 +4963,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1ba1eb8d751a94cb34b4533a858c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelCompletionManager
-  resultPanel: {fileID: 0}
-  successPanel: {fileID: 0}
-  failurePanel: {fileID: 0}
-  currentLevel: 0
+  resultPanel: {fileID: 928227904}
+  successPanel: {fileID: 928227906}
+  failurePanel: {fileID: 928227905}
+  currentLevel: 2
 --- !u!114 &497244033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8874,6 +8874,21 @@ PrefabInstance:
 --- !u!224 &928227903 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1306433117431529496, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+  m_PrefabInstance: {fileID: 928227902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &928227904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5302331925009347736, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+  m_PrefabInstance: {fileID: 928227902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &928227905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2012172226467387910, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+  m_PrefabInstance: {fileID: 928227902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &928227906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5007569317796952896, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
   m_PrefabInstance: {fileID: 928227902}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &967532152
