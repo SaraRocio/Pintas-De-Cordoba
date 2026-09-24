@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 497244032}
         m_TargetAssemblyTypeName: LevelCompletionManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1

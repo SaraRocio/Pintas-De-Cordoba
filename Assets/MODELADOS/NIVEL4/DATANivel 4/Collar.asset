@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleData
   itemName: Collar
   type: 3
-  isFinalObjective: 0
+  isFinalObjective: 1
   icon: {fileID: 3932958144695611787, guid: 649902915b6c57147b8610c01f3c2b9d, type: 3}
+  requiredAmount: 1
