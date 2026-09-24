@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Selector de nivel.unity
+    guid: 8ce18e5802313834ebc7bd5eb15baed2
+  - enabled: 1
     path: Assets/Scenes/Nivel 1.unity
     guid: 236cc2be9397a5d49a36f7628adf838f
   - enabled: 1
