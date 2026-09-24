@@ -2600,7 +2600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelCompletionManager
   resultPanel: {fileID: 2114065565}
   successPanel: {fileID: 983739751}
-  failurePanel: {fileID: 2114065565}
+  failurePanel: {fileID: 558200277}
   currentLevel: 3
 --- !u!114 &497244033
 MonoBehaviour:
@@ -2614,6 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f04e50f36312e0479938a0379a7780a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  pausePanel: {fileID: 686375798}
 --- !u!114 &497244034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5196,7 +5197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 497244033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -6361,7 +6362,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 497244033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -10130,7 +10131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 497244033}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
