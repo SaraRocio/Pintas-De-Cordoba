@@ -19,7 +19,6 @@ public class LevelSelectButton : MonoBehaviour
     [Header("Tiempo")]
     [SerializeField] private float panelTime = 3f;
 
-    private bool playerInside = false;
     private bool isWaiting = false;
 
     private void Start()
@@ -46,17 +45,7 @@ public class LevelSelectButton : MonoBehaviour
         if (isWaiting)
             return;
 
-        playerInside = true;
-
         StartCoroutine(LevelInteraction());
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
-        playerInside = false;
     }
 
     private IEnumerator LevelInteraction()
@@ -77,9 +66,10 @@ public class LevelSelectButton : MonoBehaviour
 
             SceneManager.LoadScene(sceneName);
         }
-        else
+        else   
         {
             lockedPanel.SetActive(true);
+
             Debug.Log("PANEL BLOQUEADO ACTIVADO");
 
             availablePanel.SetActive(false);
