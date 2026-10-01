@@ -2077,7 +2077,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.66
+  m_Radius: 0.29
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -2102,8 +2102,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.530384, y: 1.5827727, z: 0.6516964}
-  m_Center: {x: -0.010583967, y: 0.860996, z: 0.0040130615}
+  m_Size: {x: 0.45240307, y: 1.5827727, z: 0.6516964}
+  m_Center: {x: 0.002453804, y: 0.860996, z: 0.0040130615}
 --- !u!95 &391484739
 Animator:
   serializedVersion: 7
