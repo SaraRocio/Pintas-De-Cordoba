@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 5
   gravityScale: 2
   rotateSpeed: 10
   charCon: {fileID: 141145810}
