@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: 04b37a099fb1d17489c3917f87146bb3
+guid: 13741e4478b24a644900c4819b3ee562
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
   externalObjects:
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: texture_pbr_20250901
-    second: {fileID: 2800000, guid: 4b02d03b448b8b148a92eefdb667c2eb, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: texture_pbr_20250901_normal
-    second: {fileID: 2800000, guid: bc2dac61ee21dff40968287e31ccf446, type: 3}
+      name: Material.001
+    second: {fileID: 2100000, guid: b4919af282ef5ba4aa28b4c3379e28cb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

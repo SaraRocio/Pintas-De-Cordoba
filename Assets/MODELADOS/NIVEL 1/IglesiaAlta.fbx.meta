@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: d7d6affc7c86e26418765ef02089525b
+guid: 4bd049b5aaffa0d40bcf25f91bea4790
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
   externalObjects:
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: texture_pbr_20250901
-    second: {fileID: 2800000, guid: 41fac5d3364d90640b31cad7e3e5acb0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: texture_pbr_20250901_normal
-    second: {fileID: 2800000, guid: d20dd12106dc76a4b9743ba34d65e2cd, type: 3}
+      name: Material.001
+    second: {fileID: 2100000, guid: f167007fb4ced2b44b04c4fbd0694baa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -54,8 +49,8 @@ ModelImporter:
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
