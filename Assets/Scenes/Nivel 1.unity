@@ -4272,6 +4272,7 @@ MonoBehaviour:
   tutorialPanel: {fileID: 1543722938}
   countdownPanel: {fileID: 952800243}
   countdownText: {fileID: 348244733}
+  playerRunner: {fileID: 0}
   numberTime: 1
 --- !u!1001 &500567889
 PrefabInstance:
