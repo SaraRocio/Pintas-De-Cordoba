@@ -6,135 +6,152 @@ using System.Collections;
 // Esta clase controla el movimiento de Deiva.
 public class PlayerRunner : MonoBehaviour
 {
-    // Referencia al CharacterController de Deiva.
     private CharacterController controller;
-
-    // Referencia al Animator de Deiva.
     private Animator anim;
 
-    // Velocidad automática de avance.
+    [Header("Movimiento")]
     public float forwardSpeed = 5f;
-
-    // Velocidad de movimiento hacia los lados.
     public float lateralSpeed = 6f;
-
-    // Altura del salto.
     public float jumpHeight = 2f;
-
-    // Fuerza de gravedad.
     public float gravity = -20f;
 
-    // Tiempo que dura la animación de muerte antes de reiniciar.
+    [Header("Muerte")]
     public float deathDelay = 2f;
 
-    // Velocidad vertical actual.
     private Vector3 velocity;
-
-    // Evita que la muerte se active varias veces.
     private bool isDead = false;
+    private bool canMove = false;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+
+        // Al comenzar, Deiva espera el inicio de la partida.
+        if (anim != null)
+        {
+            anim.SetBool("IsDead", false);
+            anim.SetBool("IsJumping", false);
+        }
     }
 
     void Update()
     {
-        // Si Deiva murió, no permitimos ningún movimiento.
         if (isDead)
+            return;
+
+        if (controller == null)
+            return;
+
+        // La gravedad se mantiene aunque la partida no haya empezado.
+        if (!canMove)
         {
+            if (controller.isGrounded)
+                velocity.y = -2f;
+            else
+                velocity.y += gravity * Time.deltaTime;
+
+            controller.Move(Vector3.up * velocity.y * Time.deltaTime);
             return;
         }
 
-        // Comprueba si existe un teclado.
-        if (Keyboard.current == null)
-        {
-            return;
-        }
-
-        // Movimiento izquierda.
-        bool moveLeft = Keyboard.current.aKey.isPressed ||
-                        Keyboard.current.leftArrowKey.isPressed;
-
-        // Movimiento derecha.
-        bool moveRight = Keyboard.current.dKey.isPressed ||
-                         Keyboard.current.rightArrowKey.isPressed;
-
+        // Movimiento lateral.
         float horizontal = 0f;
 
-        if (moveLeft)
+        if (Keyboard.current != null)
         {
-            horizontal = -1f;
+            bool moveLeft = Keyboard.current.aKey.isPressed ||
+                            Keyboard.current.leftArrowKey.isPressed;
+
+            bool moveRight = Keyboard.current.dKey.isPressed ||
+                             Keyboard.current.rightArrowKey.isPressed;
+
+            if (moveLeft && !moveRight)
+                horizontal = -1f;
+            else if (moveRight && !moveLeft)
+                horizontal = 1f;
         }
 
-        if (moveRight)
-        {
-            horizontal = 1f;
-        }
-
-        // Movimiento automático hacia adelante
-        // y movimiento lateral.
+        // Avance automático del runner.
         Vector3 move = transform.forward * forwardSpeed
                      + transform.right * horizontal * lateralSpeed;
 
-        // Comprobar si está en el suelo.
+        // Salto y gravedad.
         if (controller.isGrounded)
         {
-            if (velocity.y < 0)
-            {
+            if (velocity.y < 0f)
                 velocity.y = -2f;
-            }
 
-            // Salto.
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Keyboard.current != null &&
+                Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-                anim.SetBool("IsJumping", true);
-            }
-            else
-            {
-                anim.SetBool("IsJumping", false);
+                if (anim != null)
+                    anim.SetBool("IsJumping", true);
             }
         }
 
-        // Gravedad.
         velocity.y += gravity * Time.deltaTime;
+        move.y = velocity.y;
 
-        // Movimiento vertical.
-        move += velocity;
-
-        // Mover a Deiva.
         controller.Move(move * Time.deltaTime);
     }
 
+    // Llamar cuando se cierre el tutorial y comience la partida.
+    public void StartRunning()
+    {
+        if (isDead)
+            return;
+
+        canMove = true;
+    }
+
+    // Detiene el movimiento durante el tutorial o una pausa.
+    public void StopRunning()
+    {
+        canMove = false;
+        velocity = Vector3.zero;
+
+        if (anim != null)
+        {
+            anim.SetBool("IsJumping", false);
+        }
+    }
+    public void StopAtFinish()
+    {
+        if (isDead)
+            return;
+
+        StopRunning();
+
+        // Detener la animación de salto.
+        if (anim != null)
+        {
+            anim.SetBool("IsJumping", false);
+        }
+    }
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        // Si toca una pared, muere.
-        if (hit.gameObject.CompareTag("Wall"))
-        {
+        if (canMove && hit.gameObject.CompareTag("Wall"))
             Morir();
-        }
     }
 
     void Morir()
     {
-        // Evita activar la muerte varias veces.
         if (isDead)
-        {
             return;
-        }
 
         isDead = true;
-
-        // Detiene el movimiento.
+        canMove = false;
         velocity = Vector3.zero;
 
-        // Activa la animación de muerte.
-        anim.SetBool("IsDead", true);
+        if (anim != null)
+        {
+            anim.SetBool("IsJumping", false);
+            anim.SetBool("IsDead", true);
+        }
 
-        // Espera y reinicia.
         StartCoroutine(ReiniciarDespuesDeMorir());
     }
 
@@ -142,12 +159,17 @@ public class PlayerRunner : MonoBehaviour
     {
         yield return new WaitForSeconds(deathDelay);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
     }
 
-    // Animation Event del salto.
+    // Animation Event, si lo tienes configurado.
     void StopJump()
     {
-        anim.SetBool("IsJumping", false);
+        if (anim != null)
+            anim.SetBool("IsJumping", false);
     }
 }
