@@ -2900,6 +2900,7 @@ GameObject:
   - component: {fileID: 497244031}
   - component: {fileID: 497244035}
   - component: {fileID: 497244032}
+  - component: {fileID: 497244036}
   - component: {fileID: 497244033}
   - component: {fileID: 497244034}
   m_Layer: 0
@@ -3012,6 +3013,19 @@ MonoBehaviour:
   countdownText: {fileID: 860019485}
   playerRunner: {fileID: 0}
   numberTime: -0.05
+--- !u!114 &497244036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497244028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589531f4a45b98643aaedaf35ac4e216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
+  musicType: 1
 --- !u!1 &526941648
 GameObject:
   m_ObjectHideFlags: 0
@@ -6345,7 +6359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0.06478882}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.064819336}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140197888

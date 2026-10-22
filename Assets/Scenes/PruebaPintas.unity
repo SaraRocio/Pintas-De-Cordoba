@@ -2786,6 +2786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962463380}
   - component: {fileID: 1962463381}
+  - component: {fileID: 1962463382}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2821,6 +2822,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialPintas
   tutorialPanel: {fileID: 2080750150}
+--- !u!114 &1962463382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962463379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589531f4a45b98643aaedaf35ac4e216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
+  musicType: 3
 --- !u!1 &2036245609
 GameObject:
   m_ObjectHideFlags: 0
