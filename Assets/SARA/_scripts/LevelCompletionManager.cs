@@ -75,7 +75,7 @@ public class LevelCompletionManager : MonoBehaviour
         // SOLO Nivel 4 va a la escena final
         if (currentLevel == 4)
         {
-            SceneManager.LoadScene("Final");
+            SceneManager.LoadScene("PruebaPintas");
             return;
         }
 
