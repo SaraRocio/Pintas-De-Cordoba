@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01df1151b383fd047b4d107625015758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 8
+  moveSpeed: 5
   jumpForce: 7
   gravityScale: 2
   rotateSpeed: 10
@@ -759,7 +759,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.66
+  m_Radius: 0.37
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -784,8 +784,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2321754, y: 1.5827727, z: 0.6516964}
-  m_Center: {x: 0.009022236, y: 0.860996, z: 0.0040130764}
+  m_Size: {x: 0.7296182, y: 1.5827727, z: 0.8284599}
+  m_Center: {x: 0.040704533, y: 0.86099595, z: 0.0923948}
 --- !u!95 &146206474
 Animator:
   serializedVersion: 7

@@ -6448,7 +6448,7 @@ Transform:
   m_GameObject: {fileID: 1184867271}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.89924, y: 0.020000001, z: 25.812046}
+  m_LocalPosition: {x: -22.89924, y: 0.020000001, z: 25.46}
   m_LocalScale: {x: 3.1006498, y: 8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10131,7 +10131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 497244032}
         m_TargetAssemblyTypeName: LevelCompletionManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
