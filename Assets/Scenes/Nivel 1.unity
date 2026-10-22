@@ -4230,7 +4230,7 @@ MonoBehaviour:
   resultPanel: {fileID: 2114065565}
   successPanel: {fileID: 507325327}
   failurePanel: {fileID: 988043556}
-  currentLevel: 1
+  currentLevel: 2
 --- !u!114 &497244033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18453,9 +18453,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2012172226467387910, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321524676303780951, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7726545710941351130, guid: b47e43dbc83a2a14f8d4269b8788432a, type: 3}
+    - target: {fileID: 4327372462595112362, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7726545710941351130, guid: b47e43dbc83a2a14f8d4269b8788432a, type: 3}
+    - target: {fileID: 5007569317796952896, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121139932855847899, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7726545710941351130, guid: b47e43dbc83a2a14f8d4269b8788432a, type: 3}
     - target: {fileID: 5302331925009347736, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
       propertyPath: m_Name
       value: ResultadoNivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302331925009347736, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5403070203950430694, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -18465,6 +18489,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 497244032}
+    - target: {fileID: 8319465370549327442, guid: 56cf78623636ae046a19b54ef6d8f807, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3961109338451502296, guid: d04a5432db197e447bf408d1130cf515, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
