@@ -6050,7 +6050,7 @@ MonoBehaviour:
   sceneName: Nivel 4
   activatedModel: {fileID: 1885718494}
   deactivatedModel: {fileID: 543938481}
-  availablePanel: {fileID: 1031599920}
+  availablePanel: {fileID: 366820807}
   lockedPanel: {fileID: 1316510383}
   panelTime: 3
 --- !u!65 &2001684030

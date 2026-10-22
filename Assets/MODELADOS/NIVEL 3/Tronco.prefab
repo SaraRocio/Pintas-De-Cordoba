@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3707860734547674002}
   - component: {fileID: 1121910368690464906}
   - component: {fileID: 6287823564070864542}
-  - component: {fileID: 2002628300218381087}
   m_Layer: 0
   m_Name: mesh_rep_0_ori_repair_quad
   m_TagString: Untagged
@@ -113,27 +112,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02252897, y: 0.013999729, z: 0.0026512854}
   m_Center: {x: -0.00085236545, y: -0.00026231646, z: 0.0013728366}
---- !u!65 &2002628300218381087
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2845624743909754650}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0018758215, y: 0.0008643131, z: 0.016029086}
-  m_Center: {x: 0.00022521563, y: 0.00020235805, z: 0.008061732}
 --- !u!1 &3592473113537365209
 GameObject:
   m_ObjectHideFlags: 0

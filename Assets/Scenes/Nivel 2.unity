@@ -1877,8 +1877,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.201557, y: 5.5071497, z: 6.3494506}
-  m_Center: {x: 0.048838973, y: 2.2535748, z: 0.14766443}
+  m_Size: {x: 1.5054493, y: 5.5071497, z: 6.3494506}
+  m_Center: {x: 0.048839033, y: 2.2535748, z: 0.14766455}
 --- !u!1 &72391661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5239,7 +5239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.26
+      value: 2.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5269,6 +5269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef (4)
@@ -6312,7 +6316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.78
+      value: 2.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6342,6 +6346,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef (5)
@@ -6946,7 +6954,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.66
+  m_Radius: 0.32
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -10772,7 +10780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.45
+      value: 2.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10802,6 +10810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef (2)
@@ -12636,8 +12648,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009013181, y: 0.0047811507, z: 0.007919661}
-  m_Center: {x: -0.0006798002, y: 0.0023913851, z: -0.0011194603}
+  m_Size: {x: 0.0074198167, y: 0.0047811507, z: 0.0052066394}
+  m_Center: {x: 0.00011688312, y: 0.0023913854, z: 0.00023705304}
 --- !u!1 &480124575
 GameObject:
   m_ObjectHideFlags: 0
@@ -13311,7 +13323,7 @@ MonoBehaviour:
   resultPanel: {fileID: 2114065565}
   successPanel: {fileID: 1849230056}
   failurePanel: {fileID: 480124575}
-  currentLevel: 0
+  currentLevel: 2
 --- !u!114 &497244033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23174,8 +23186,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.201557, y: 5.5071497, z: 6.3494506}
-  m_Center: {x: 0.048838973, y: 2.2535748, z: 0.14766443}
+  m_Size: {x: 1.678119, y: 5.5071497, z: 6.309184}
+  m_Center: {x: 0.028706849, y: 2.2535748, z: 0.12753129}
 --- !u!1001 &857995319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23735,7 +23747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.19
+      value: 2.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23765,6 +23777,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef (1)
@@ -29460,11 +29476,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 582489829}
-  - {fileID: 2114065566}
   - {fileID: 1477542965}
+  - {fileID: 2114065566}
   - {fileID: 1492533207}
   - {fileID: 467370559}
+  - {fileID: 582489829}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -30688,7 +30704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.77
+      value: 2.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30718,6 +30734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef (6)
@@ -32148,7 +32168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.46
+      value: 2.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32178,6 +32198,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef (3)
@@ -41394,7 +41418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1492533207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49668,7 +49692,7 @@ RectTransform:
   m_GameObject: {fileID: 1849230056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0071, y: 1.0071, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1020387623}
@@ -49681,7 +49705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.032409668}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849230058
@@ -53038,6 +53062,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3208899192168588878, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.414
+      objectReference: {fileID: 0}
+    - target: {fileID: -2197808440955137509, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7888534309404982192, guid: 01e0157d44a9bee4c84914550a87657f, type: 3}
     - target: {fileID: 919132149155446097, guid: c0b346bcec97390419bf0b0f4b27aea7, type: 3}
       propertyPath: m_Name
       value: Sogadef
@@ -55623,8 +55655,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.201557, y: 5.5071497, z: 6.3494506}
-  m_Center: {x: 0.048838973, y: 2.2535748, z: 0.14766443}
+  m_Size: {x: 1.8546951, y: 5.5071497, z: 6.3494506}
+  m_Center: {x: -0.025488406, y: 2.2535748, z: 0.14766455}
 --- !u!1 &2141396858
 GameObject:
   m_ObjectHideFlags: 0
