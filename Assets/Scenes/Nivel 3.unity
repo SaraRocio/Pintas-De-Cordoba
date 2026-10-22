@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01df1151b383fd047b4d107625015758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
+  moveSpeed: 8
   jumpForce: 7
   gravityScale: 2
   rotateSpeed: 10
@@ -2902,6 +2902,7 @@ GameObject:
   - component: {fileID: 497244032}
   - component: {fileID: 497244033}
   - component: {fileID: 497244034}
+  - component: {fileID: 497244036}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3012,6 +3013,19 @@ MonoBehaviour:
   countdownText: {fileID: 860019485}
   playerRunner: {fileID: 0}
   numberTime: -0.05
+--- !u!114 &497244036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497244028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589531f4a45b98643aaedaf35ac4e216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
+  musicType: 1
 --- !u!1 &526941648
 GameObject:
   m_ObjectHideFlags: 0

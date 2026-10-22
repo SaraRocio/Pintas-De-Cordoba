@@ -2967,6 +2967,7 @@ GameObject:
   - component: {fileID: 497244034}
   - component: {fileID: 497244032}
   - component: {fileID: 497244033}
+  - component: {fileID: 497244035}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3065,6 +3066,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pausePanel: {fileID: 1786384104}
+--- !u!114 &497244035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497244028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589531f4a45b98643aaedaf35ac4e216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
+  musicType: 2
 --- !u!1001 &545809326
 PrefabInstance:
   m_ObjectHideFlags: 0
