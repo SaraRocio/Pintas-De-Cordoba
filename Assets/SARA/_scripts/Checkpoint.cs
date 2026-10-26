@@ -10,10 +10,17 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (LevelManager.instance.respawnPoint != transform.position)
+            Debug.Log("Player ha entrado en el checkpoint");
+            if (Vector3.Distance(
+                LevelManager.instance.respawnPoint,
+                transform.position) > 0.01f)
             {
                 LevelManager.instance.respawnPoint = transform.position;
 
+                Debug.Log(
+                    "Checkpoint: " + gameObject.name +
+                    " | Posición guardada: " + transform.position
+                );
                 if (effect != null && effectPoint != null)
                 {
                     Instantiate(

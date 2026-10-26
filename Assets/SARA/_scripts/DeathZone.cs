@@ -7,8 +7,9 @@ public class DeathZone : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-
+            Debug.Log("Player ha entrado en la zona de muerte");
             LevelManager.instance.RespawnPlayer();
+            Debug.Log("Player ha muerto");
         }
     }
 }
