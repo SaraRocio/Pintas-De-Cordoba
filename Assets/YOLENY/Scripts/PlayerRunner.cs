@@ -76,19 +76,29 @@ public class PlayerRunner : MonoBehaviour
         Vector3 move = transform.forward * forwardSpeed
                      + transform.right * horizontal * lateralSpeed;
 
+
         // Salto y gravedad.
-        if (controller.isGrounded)
+        bool groundedBeforeMove = controller.isGrounded;
+
+        if (groundedBeforeMove)
         {
             if (velocity.y < 0f)
                 velocity.y = -2f;
 
             if (Keyboard.current != null &&
-                Keyboard.current.spaceKey.wasPressedThisFrame)
+    Keyboard.current.spaceKey.wasPressedThisFrame)
             {
+                Debug.Log("ESPACIO detectado. canMove: " + canMove
+                    + " | En el suelo: " + controller.isGrounded);
+
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+                Debug.Log("Fuerza vertical del salto: " + velocity.y);
 
                 if (anim != null)
                     anim.SetBool("IsJumping", true);
+                else
+                    Debug.LogWarning("No se encontró el Animator en Deiva.");
             }
         }
 
@@ -96,7 +106,14 @@ public class PlayerRunner : MonoBehaviour
         move.y = velocity.y;
 
         controller.Move(move * Time.deltaTime);
-    }
+
+        // Actualizar la animación cuando aterriza.
+        if (controller.isGrounded && velocity.y <= 0f)
+        {
+            if (anim != null)
+                anim.SetBool("IsJumping", false);
+        }
+        }
 
     // Llamar cuando se cierre el tutorial y comience la partida.
     public void StartRunning()
@@ -105,6 +122,8 @@ public class PlayerRunner : MonoBehaviour
             return;
 
         canMove = true;
+
+        Debug.Log("PARTIDA INICIADA: canMove = " + canMove);
     }
 
     // Detiene el movimiento durante el tutorial o una pausa.
@@ -145,6 +164,18 @@ public class PlayerRunner : MonoBehaviour
         }
     }
 
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (!canMove || isDead)
+            return;
+
+        if (hit.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("¡Pared detectada! Ejecutando muerte.");
+            Morir();
+        }
+    }
 
     void Morir()
     {
