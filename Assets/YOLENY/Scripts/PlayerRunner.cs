@@ -118,24 +118,33 @@ public class PlayerRunner : MonoBehaviour
             anim.SetBool("IsJumping", false);
         }
     }
+
     public void StopAtFinish()
     {
         if (isDead)
             return;
 
-        StopRunning();
+        // Bloquear el movimiento del runner.
+        canMove = false;
+        velocity = Vector3.zero;
 
         // Detener la animación de salto.
         if (anim != null)
         {
             anim.SetBool("IsJumping", false);
         }
+
+        // Mostrar el resultado del nivel.
+        if (LevelCompletionManager.instance != null)
+        {
+            LevelCompletionManager.instance.CheckLevelCompletion();
+        }
+        else
+        {
+            Debug.LogError("No se encontró LevelCompletionManager en la escena.");
+        }
     }
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (canMove && hit.gameObject.CompareTag("Wall"))
-            Morir();
-    }
+
 
     void Morir()
     {
