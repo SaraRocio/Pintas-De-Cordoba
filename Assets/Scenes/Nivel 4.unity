@@ -646,6 +646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.1
@@ -2685,7 +2689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRunner
   forwardSpeed: 7
   lateralSpeed: 6
-  jumpHeight: 2.5
+  jumpHeight: 2
   gravity: -20
   deathDelay: 2
 --- !u!1001 &393051946
@@ -2784,7 +2788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 174e7be4cda372542bb6a42ff660006e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.81
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 174e7be4cda372542bb6a42ff660006e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3383,6 +3387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0699997
@@ -3444,6 +3452,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4368,6 +4380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.1000004
@@ -5275,6 +5291,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7411,6 +7431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0594435
@@ -7794,6 +7818,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8471,6 +8499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.1
@@ -8595,6 +8627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0619993
@@ -8691,6 +8727,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9164,6 +9204,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10105,6 +10149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.1000004
@@ -10538,7 +10586,7 @@ Transform:
   m_GameObject: {fileID: 1800216870}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.8, y: 0.03662, z: 2.32967}
+  m_LocalPosition: {x: 4.8, y: -0.81, z: 2.32967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11699,7 +11747,7 @@ GameObject:
   - component: {fileID: 2038344715}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
