@@ -22,36 +22,50 @@ public class PlayerRunner : MonoBehaviour
     private bool isDead = false;
     private bool canMove = false;
 
+    // Indica si la partida ya comenzó.
+    private bool hasStarted = false;
+
+    // Evita que se active el salto varias veces en el aire.
+    private bool isJumping = false;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
 
-        // Al comenzar, Deiva espera el inicio de la partida.
         if (anim != null)
         {
             anim.SetBool("IsDead", false);
             anim.SetBool("IsJumping", false);
+            anim.SetBool("IsRunning", false);
         }
     }
 
     void Update()
     {
-        if (isDead)
+        if (isDead || controller == null)
             return;
 
-        if (controller == null)
-            return;
-
-        // La gravedad se mantiene aunque la partida no haya empezado.
+        // Antes de comenzar: Deiva permanece quieta,
+        // pero puede saltar en el mismo sitio.
         if (!canMove)
         {
             if (controller.isGrounded)
-                velocity.y = -2f;
-            else
-                velocity.y += gravity * Time.deltaTime;
+            {
+                if (velocity.y < 0f)
+                    velocity.y = -2f;
 
-            controller.Move(Vector3.up * velocity.y * Time.deltaTime);
+                // Permitir saltar en Idle antes de iniciar.
+                if (!hasStarted &&
+                    !isJumping &&
+                    Keyboard.current != null &&
+                    Keyboard.current.spaceKey.wasPressedThisFrame)
+                {
+                    Saltar();
+                }
+            }
+
+            AplicarGravedad();
             return;
         }
 
@@ -60,11 +74,13 @@ public class PlayerRunner : MonoBehaviour
 
         if (Keyboard.current != null)
         {
-            bool moveLeft = Keyboard.current.aKey.isPressed ||
-                            Keyboard.current.leftArrowKey.isPressed;
+            bool moveLeft =
+                Keyboard.current.aKey.isPressed ||
+                Keyboard.current.leftArrowKey.isPressed;
 
-            bool moveRight = Keyboard.current.dKey.isPressed ||
-                             Keyboard.current.rightArrowKey.isPressed;
+            bool moveRight =
+                Keyboard.current.dKey.isPressed ||
+                Keyboard.current.rightArrowKey.isPressed;
 
             if (moveLeft && !moveRight)
                 horizontal = -1f;
@@ -72,12 +88,12 @@ public class PlayerRunner : MonoBehaviour
                 horizontal = 1f;
         }
 
-        // Avance automático del runner.
-        Vector3 move = transform.forward * forwardSpeed
-                     + transform.right * horizontal * lateralSpeed;
+        // Avance automático cuando la partida ya comenzó.
+        Vector3 move =
+            transform.forward * forwardSpeed +
+            transform.right * horizontal * lateralSpeed;
 
-
-        // Salto y gravedad.
+        // Detectar si está en el suelo antes de moverse.
         bool groundedBeforeMove = controller.isGrounded;
 
         if (groundedBeforeMove)
@@ -85,57 +101,96 @@ public class PlayerRunner : MonoBehaviour
             if (velocity.y < 0f)
                 velocity.y = -2f;
 
-            if (Keyboard.current != null &&
-    Keyboard.current.spaceKey.wasPressedThisFrame)
+            // Saltar mientras corre.
+            if (!isJumping &&
+                Keyboard.current != null &&
+                Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                Debug.Log("ESPACIO detectado. canMove: " + canMove
-                    + " | En el suelo: " + controller.isGrounded);
-
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-
-                Debug.Log("Fuerza vertical del salto: " + velocity.y);
-
-                if (anim != null)
-                    anim.SetBool("IsJumping", true);
-                else
-                    Debug.LogWarning("No se encontró el Animator en Deiva.");
+                Saltar();
             }
         }
 
+        // Aplicar gravedad y movimiento.
         velocity.y += gravity * Time.deltaTime;
         move.y = velocity.y;
 
         controller.Move(move * Time.deltaTime);
 
-        // Actualizar la animación cuando aterriza.
+        // Detectar el aterrizaje.
         if (controller.isGrounded && velocity.y <= 0f)
         {
+            isJumping = false;
+
             if (anim != null)
                 anim.SetBool("IsJumping", false);
         }
-        }
+    }
 
-    // Llamar cuando se cierre el tutorial y comience la partida.
+    void Saltar()
+    {
+        if (isDead || isJumping)
+            return;
+
+        isJumping = true;
+
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+        if (anim != null)
+            anim.SetBool("IsJumping", true);
+
+        Debug.Log("Salto activado. Partida iniciada: " + hasStarted);
+    }
+
+    void AplicarGravedad()
+    {
+        if (controller.isGrounded && velocity.y < 0f)
+            velocity.y = -2f;
+
+        velocity.y += gravity * Time.deltaTime;
+
+        // Solo movimiento vertical antes de comenzar.
+        controller.Move(Vector3.up * velocity.y * Time.deltaTime);
+
+        // Detectar el aterrizaje del salto en Idle.
+        if (controller.isGrounded && velocity.y <= 0f)
+        {
+            if (isJumping)
+            {
+                isJumping = false;
+
+                if (anim != null)
+                    anim.SetBool("IsJumping", false);
+            }
+        }
+    }
+
+    // Llamar desde el botón que inicia la partida.
     public void StartRunning()
     {
         if (isDead)
             return;
 
+        hasStarted = true;
         canMove = true;
-
-        Debug.Log("PARTIDA INICIADA: canMove = " + canMove);
-    }
-
-    // Detiene el movimiento durante el tutorial o una pausa.
-    public void StopRunning()
-    {
-        canMove = false;
-        velocity = Vector3.zero;
 
         if (anim != null)
         {
             anim.SetBool("IsJumping", false);
+            anim.SetBool("IsRunning", true);
         }
+
+        Debug.Log("PARTIDA INICIADA");
+    }
+
+    // Detener el movimiento durante el tutorial o una pausa.
+    public void StopRunning()
+    {
+        canMove = false;
+        velocity = Vector3.zero;
+        isJumping = false;
+
+        if (anim != null)
+            anim.SetBool("IsJumping", false);
     }
 
     public void StopAtFinish()
@@ -143,27 +198,27 @@ public class PlayerRunner : MonoBehaviour
         if (isDead)
             return;
 
-        // Bloquear el movimiento del runner.
         canMove = false;
         velocity = Vector3.zero;
+        isJumping = false;
 
-        // Detener la animación de salto.
         if (anim != null)
         {
             anim.SetBool("IsJumping", false);
+            anim.SetBool("IsRunning", false);
         }
 
-        // Mostrar el resultado del nivel.
         if (LevelCompletionManager.instance != null)
         {
             LevelCompletionManager.instance.CheckLevelCompletion();
         }
         else
         {
-            Debug.LogError("No se encontró LevelCompletionManager en la escena.");
+            Debug.LogError(
+                "No se encontró LevelCompletionManager en la escena."
+            );
         }
     }
-
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -185,10 +240,12 @@ public class PlayerRunner : MonoBehaviour
         isDead = true;
         canMove = false;
         velocity = Vector3.zero;
+        isJumping = false;
 
         if (anim != null)
         {
             anim.SetBool("IsJumping", false);
+            anim.SetBool("IsRunning", false);
             anim.SetBool("IsDead", true);
         }
 
@@ -206,10 +263,14 @@ public class PlayerRunner : MonoBehaviour
         );
     }
 
-    // Animation Event, si lo tienes configurado.
+    // Compatible con Animation Events si los utilizas.
     void StopJump()
     {
         if (anim != null)
+        {
             anim.SetBool("IsJumping", false);
+        }
+
+        isJumping = false;
     }
 }
