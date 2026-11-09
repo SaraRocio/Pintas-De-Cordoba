@@ -263,8 +263,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5712501, y: 0.5712507, z: 0.4871819}
-  m_Center: {x: 0.021016896, y: 0.21437466, z: 0.0042036176}
+  m_Size: {x: 0.5712501, y: 2.334189, z: 0.4871819}
+  m_Center: {x: 0.021016896, y: -0.001095295, z: 0.0042036176}
 --- !u!114 &58029144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: quiosco (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
       value: 445.8
@@ -645,6 +649,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,11 +874,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 356687236573007984, guid: 9694f4ca2ae900c41b6da2cfaecc662d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.74
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 356687236573007984, guid: 9694f4ca2ae900c41b6da2cfaecc662d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.97
+      value: 31.56
       objectReference: {fileID: 0}
     - target: {fileID: 356687236573007984, guid: 9694f4ca2ae900c41b6da2cfaecc662d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -958,8 +966,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010747833, y: 0.0057256133, z: 0.010747833}
-  m_Center: {x: 0.0000110678375, y: 0.0029629502, z: 0.0000010204967}
+  m_Size: {x: 0.010747833, y: 0.041227527, z: 0.010747833}
+  m_Center: {x: 0.000011067954, y: 0.0007478227, z: 0.0000010205135}
 --- !u!1 &188482191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1467,10 @@ PrefabInstance:
     - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_Name
       value: quiosco (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
@@ -2002,6 +2014,10 @@ PrefabInstance:
     - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_Name
       value: quiosco (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
@@ -2685,7 +2701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRunner
   forwardSpeed: 7
   lateralSpeed: 6
-  jumpHeight: 2.5
+  jumpHeight: 1.5
   gravity: -20
   deathDelay: 2
 --- !u!1001 &393051946
@@ -3261,8 +3277,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010747833, y: 0.0057256133, z: 0.010747833}
-  m_Center: {x: 0.0000110622495, y: 0.00296295, z: 0.0000010801014}
+  m_Size: {x: 0.010747833, y: 0.041372564, z: 0.010747833}
+  m_Center: {x: 0.000011062287, y: -0.0024602958, z: 0.0000010801907}
 --- !u!1001 &578725650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3277,7 +3293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 356687236573007984, guid: 9694f4ca2ae900c41b6da2cfaecc662d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.53
+      value: 1.157
       objectReference: {fileID: 0}
     - target: {fileID: 356687236573007984, guid: 9694f4ca2ae900c41b6da2cfaecc662d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3369,8 +3385,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010747833, y: 0.0057256133, z: 0.010747833}
-  m_Center: {x: 0.0000110678375, y: 0.00296295, z: 0.0000010801014}
+  m_Size: {x: 0.010747833, y: 0.041227527, z: 0.010747833}
+  m_Center: {x: 0.000011067954, y: 0.0007478227, z: 0.0000010205135}
 --- !u!1001 &587683080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3382,6 +3398,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3444,6 +3464,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3571,7 +3595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29b5930d9c3a8b54fbb24180c9fd79ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.47
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29b5930d9c3a8b54fbb24180c9fd79ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3669,8 +3693,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5712501, y: 0.5712507, z: 0.4871819}
-  m_Center: {x: 0.021016896, y: 0.21437466, z: 0.0042036176}
+  m_Size: {x: 0.5712501, y: 2.334189, z: 0.4871819}
+  m_Center: {x: 0.021016896, y: -0.001095295, z: 0.0042036176}
 --- !u!114 &617582123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4368,6 +4392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.1000004
@@ -4711,6 +4739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: quiosco (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
       value: 445.8
@@ -4857,7 +4889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29b5930d9c3a8b54fbb24180c9fd79ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 1.056
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29b5930d9c3a8b54fbb24180c9fd79ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4955,8 +4987,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5712501, y: 0.5712507, z: 0.4871819}
-  m_Center: {x: 0.021016896, y: 0.21437466, z: 0.0042036176}
+  m_Size: {x: 0.5712501, y: 2.334189, z: 0.4871819}
+  m_Center: {x: 0.021016896, y: -0.001095295, z: 0.0042036176}
 --- !u!114 &858173996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5275,6 +5307,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5882,6 +5918,10 @@ PrefabInstance:
     - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_Name
       value: quiosco (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
@@ -7027,6 +7067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: quiosco
       objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
       value: 445.8
@@ -7300,7 +7344,7 @@ GameObject:
   - component: {fileID: 1184867273}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7411,6 +7455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0594435
@@ -7475,7 +7523,7 @@ GameObject:
   - component: {fileID: 1205614900}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7794,6 +7842,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8360,6 +8412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: quiosco (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
       value: 445.8
@@ -8470,6 +8526,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8595,6 +8655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casa playa llista para usar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0619993
@@ -8691,6 +8755,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9164,6 +9232,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9994,7 +10066,7 @@ GameObject:
   - component: {fileID: 1711413644}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10104,6 +10176,10 @@ PrefabInstance:
     - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_Name
       value: casa playa llista para usar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 209728354419438678, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1904719642681103682, guid: f302b587be658114f9dd45489a2ec36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10889,6 +10965,10 @@ PrefabInstance:
     - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_Name
       value: quiosco (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383023672167747039, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 9159665447330617189, guid: 528a6ac362c354643aaf64cc346fdef3, type: 3}
       propertyPath: m_LocalScale.x
@@ -11699,7 +11779,7 @@ GameObject:
   - component: {fileID: 2038344715}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
