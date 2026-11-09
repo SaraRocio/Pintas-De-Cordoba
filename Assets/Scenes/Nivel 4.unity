@@ -2622,12 +2622,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.66
+  m_Radius: 0.42
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.91, z: 0}
+  m_Center: {x: 0, y: 0.8999, z: 0}
 --- !u!65 &391484738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7300,7 +7300,7 @@ GameObject:
   - component: {fileID: 1184867273}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7475,7 +7475,7 @@ GameObject:
   - component: {fileID: 1205614900}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9994,7 +9994,7 @@ GameObject:
   - component: {fileID: 1711413644}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11699,7 +11699,7 @@ GameObject:
   - component: {fileID: 2038344715}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
