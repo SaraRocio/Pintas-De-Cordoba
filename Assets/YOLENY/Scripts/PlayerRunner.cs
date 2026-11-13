@@ -1,5 +1,6 @@
+
 using UnityEngine;
-using UnityEngine.InputSystem; // Permite utilizar el nuevo sistema de entrada.
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -25,8 +26,16 @@ public class PlayerRunner : MonoBehaviour
     // Indica si la partida ya comenzó.
     private bool hasStarted = false;
 
-    // Evita que se active el salto varias veces en el aire.
+    // Evita saltar varias veces en el aire.
     private bool isJumping = false;
+
+    // Margen de detección del suelo.
+    private float groundGraceTime = 0.15f;
+    private float groundGraceCounter = 0f;
+
+    // NUEVO: guarda brevemente la pulsación del salto.
+    private float jumpBufferTime = 0.15f;
+    private float jumpBufferCounter = 0f;
 
     void Start()
     {
@@ -93,21 +102,41 @@ public class PlayerRunner : MonoBehaviour
             transform.forward * forwardSpeed +
             transform.right * horizontal * lateralSpeed;
 
-        // Detectar si está en el suelo antes de moverse.
+        // Detección del suelo con margen.
         bool groundedBeforeMove = controller.isGrounded;
 
         if (groundedBeforeMove)
         {
+            groundGraceCounter = groundGraceTime;
+
             if (velocity.y < 0f)
                 velocity.y = -2f;
+        }
+        else
+        {
+            groundGraceCounter -= Time.deltaTime;
+        }
 
-            // Saltar mientras corre.
-            if (!isJumping &&
-                Keyboard.current != null &&
-                Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                Saltar();
-            }
+        // NUEVO: guardar la pulsación de espacio.
+        if (Keyboard.current != null &&
+            Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        // NUEVO: ejecutar el salto cuando sea posible.
+        if (!isJumping &&
+            groundGraceCounter > 0f &&
+            jumpBufferCounter > 0f)
+        {
+            Saltar();
+
+            groundGraceCounter = 0f;
+            jumpBufferCounter = 0f;
         }
 
         // Aplicar gravedad y movimiento.
@@ -172,6 +201,11 @@ public class PlayerRunner : MonoBehaviour
 
         hasStarted = true;
         canMove = true;
+
+        // Reiniciar el estado del salto.
+        isJumping = false;
+        groundGraceCounter = 0f;
+        jumpBufferCounter = 0f;
 
         if (anim != null)
         {
@@ -263,7 +297,7 @@ public class PlayerRunner : MonoBehaviour
         );
     }
 
-    // Compatible con Animation Events si los utilizas.
+    // Compatible con Animation Events.
     void StopJump()
     {
         if (anim != null)
@@ -274,3 +308,4 @@ public class PlayerRunner : MonoBehaviour
         isJumping = false;
     }
 }
+//yayaya
